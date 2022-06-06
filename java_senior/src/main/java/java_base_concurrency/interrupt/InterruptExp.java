@@ -9,6 +9,7 @@ public class InterruptExp {
         Thread thread = new Thread(new Thread1());
         thread.start();
         thread.interrupt();
+
     }
 }
 

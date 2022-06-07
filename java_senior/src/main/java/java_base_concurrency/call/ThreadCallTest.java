@@ -9,7 +9,9 @@ public class ThreadCallTest {
         FutureTask<String> ft = new FutureTask<>(test);
         new Thread(ft).start();
         System.out.println("线程开始");
-
+        /**
+         * 这里才会正则执行
+         */
         System.out.println(ft.get());
 
     }

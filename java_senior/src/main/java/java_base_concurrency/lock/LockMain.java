@@ -2,7 +2,7 @@ package java_base_concurrency.lock;
 
 public class LockMain {
     public static void main(String[] args) {
-        SynchronizedNum synchronizedNum = new SynchronizedNum();
+        java_base_concurrency.lock.SynchronizedNum synchronizedNum = new java_base_concurrency.lock.SynchronizedNum();
 
         new Thread(new Runnable() {
             @Override

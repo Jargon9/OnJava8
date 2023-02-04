@@ -2,7 +2,6 @@ package java_base.concurrency.thread_pool;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
-import org.apache.lucene.util.RamUsageEstimator;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
@@ -15,8 +14,6 @@ public class Discartcase {
         ExecutorService handleThreadPool;
         BlockingQueue<Runnable> scanInstanceQueue = new LinkedBlockingQueue<>(10000);
         System.out.println(ObjectSizeCalculator.getObjectSize(scanInstanceQueue));
-        String s = RamUsageEstimator.humanSizeOf(scanInstanceQueue);
-        System.out.println(s);
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -30,7 +27,6 @@ public class Discartcase {
         };
         scanInstanceQueue.add(runnable);
         System.out.println(ObjectSizeCalculator.getObjectSize(scanInstanceQueue));
-        System.out.println(RamUsageEstimator.humanSizeOf(scanInstanceQueue));
         System.out.println(ObjectSizeCalculator.getObjectSize(1));
 //        handleThreadPool = new ThreadPoolExecutor(
 //                1, 1,
